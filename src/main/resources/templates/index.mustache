@@ -1,0 +1,13 @@
+<h1>Greeting learning spring boot 3.x</h1>
+<p>
+    In this chapter, we are learning how to make web application with spring boot 3.x
+</p>
+<ol>
+    {{#videos}}
+    <li>{{name}}</li>
+    {{/videos}}
+</ol>
+<form method="post" action="/new-video">
+    <input type="text" name="name">
+    <button type="submit">Submit</button>
+</form>

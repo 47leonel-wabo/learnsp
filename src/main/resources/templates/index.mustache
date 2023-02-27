@@ -7,10 +7,11 @@
     <li>{{name}}</li>
     {{/videos}}
 </ol>
-<form method="post" action="/multi-field-search">
+<form method="post" action="/new-video">
     <label for="name">Name:</label>
     <input type="text" id="name" name="name">
     <label for="description">Description:</label>
     <input type="text" id="description" name="description">
-    <button type="submit">Search</button>
+    <input type="hidden" name="{{_csrf.parameterName}}" value="{{_csrf.token}}">
+    <button type="submit">Submit</button>
 </form>

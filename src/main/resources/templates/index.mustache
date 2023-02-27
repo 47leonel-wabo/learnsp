@@ -7,7 +7,10 @@
     <li>{{name}}</li>
     {{/videos}}
 </ol>
-<form method="post" action="/new-video">
-    <input type="text" name="name">
-    <button type="submit">Submit</button>
+<form method="post" action="/multi-field-search">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name">
+    <label for="description">Description:</label>
+    <input type="text" id="description" name="description">
+    <button type="submit">Search</button>
 </form>

@@ -6,9 +6,7 @@
     <li>Authorities: {{authentication.authorities}}</li>
 </ul>
 <form action="/logout" method="post">
-    {{#_csrf}}
     <input type="hidden" name="{{_csrf.parameterName}}" value="{{_csrf.token}}">
-    {{/_csrf}}
     <button type="submit">Logout</button>
 </form>
 <ol>
@@ -16,9 +14,7 @@
     <li>
         {{name}}
         <form action="/delete/videos/{{id}}" method="post">
-            {{#_csrf}}
             <input type="hidden" name="{{_csrf.parameterName}}" value="{{_csrf.token}}">
-            {{/_csrf}}
             <button type="submit">Delete</button>
         </form>
     </li>
@@ -29,8 +25,6 @@
     <input type="text" id="name" name="name">
     <label for="description">Description:</label>
     <input type="text" id="description" name="description">
-<!--    {{#_csrf}}-->
     <input type="hidden" name="{{_csrf.parameterName}}" value="{{_csrf.token}}">
-<!--    {{/_csrf}}-->
     <button type="submit">Submit</button>
 </form>

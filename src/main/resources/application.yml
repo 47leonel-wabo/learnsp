@@ -1,0 +1,5 @@
+#spring.mustache.servlet.expose-request-attributes=true
+spring:
+  mustache:
+    servlet:
+      expose-request-attributes: true

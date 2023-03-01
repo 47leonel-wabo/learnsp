@@ -1,10 +1,8 @@
 package com.wbt.learnsp.controller;
 
-import com.wbt.learnsp.model.Video;
+import com.wbt.learnsp.model.VideoEntity;
 import com.wbt.learnsp.service.VideoService;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -18,12 +16,9 @@ public class ApiController {
     }
 
     @GetMapping(path = {"/api/videos"})
-    public List<Video> all() {
+    public List<VideoEntity> all() {
         return mVideoService.getVideos();
     }
 
-    @PostMapping(path = {"/api/videos"})
-    public Video add(final @RequestBody Video video) {
-        return mVideoService.create(video);
-    }
+
 }

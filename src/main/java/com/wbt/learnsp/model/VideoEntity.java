@@ -22,10 +22,17 @@ public class VideoEntity {
     private Long id;
     private String name;
     private String description;
+    private String owner;
 
     public VideoEntity(String name, String description) {
         this.name = name;
         this.description = description;
+    }
+
+    public VideoEntity(String name, String description, String owner) {
+        this.name = name;
+        this.description = description;
+        this.owner = owner;
     }
 
     @Override

@@ -1,12 +1,12 @@
-<h1>Greetings Learning Spring Boot 3.x fans</h1>
-<p>In this Application, we are learning how to make a web app using Spring Boot 3.x</p>
+<h1>{{header}}</h1>
+<p>{{intro}}</p>
 <h3>User Profile</h3>
 <ul>
     <li>Username: {{authentication.name}}</li>
     <li>Authorities: {{authentication.authorities}}</li>
 </ul>
 <form action="/logout" method="post">
-    <input type="hidden" name="{{_csrf.parameterName}}" value="{{_csrf.token}}">
+    {{#_csrf}}<input type="hidden" name="{{_csrf.parameterName}}" value="{{_csrf.token}}">{{/_csrf}}
     <button type="submit">Logout</button>
 </form>
 <ol>
@@ -14,7 +14,7 @@
     <li>
         {{name}}
         <form action="/delete/videos/{{id}}" method="post">
-            <input type="hidden" name="{{_csrf.parameterName}}" value="{{_csrf.token}}">
+            {{#_csrf}}<input type="hidden" name="{{_csrf.parameterName}}" value="{{_csrf.token}}">{{/_csrf}}
             <button type="submit">Delete</button>
         </form>
     </li>
@@ -25,6 +25,6 @@
     <input type="text" id="name" name="name">
     <label for="description">Description:</label>
     <input type="text" id="description" name="description">
-    <input type="hidden" name="{{_csrf.parameterName}}" value="{{_csrf.token}}">
+    {{#_csrf}}<input type="hidden" name="{{_csrf.parameterName}}" value="{{_csrf.token}}">{{/_csrf}}
     <button type="submit">Submit</button>
 </form>

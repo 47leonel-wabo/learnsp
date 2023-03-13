@@ -1,9 +1,6 @@
 package com.wbt.learnsp.controller;
 
-import com.wbt.learnsp.model.NewVideo;
-import com.wbt.learnsp.model.UniversalSearch;
-import com.wbt.learnsp.model.VideoEntity;
-import com.wbt.learnsp.model.VideoSearch;
+import com.wbt.learnsp.model.*;
 import com.wbt.learnsp.service.VideoService;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
@@ -19,15 +16,19 @@ import java.util.List;
 public class GreetingController {
 
     private final VideoService mVideoService;
+    private final AppConfig mAppConfig;
 
-    public GreetingController(VideoService videoService) {
+    public GreetingController(VideoService videoService, AppConfig appConfig) {
         mVideoService = videoService;
+        mAppConfig = appConfig;
     }
 
     @GetMapping
     public String greet(final Model model, final Authentication authentication) {
         model.addAttribute("videos", mVideoService.getVideos());
         model.addAttribute("authentication", authentication);
+        model.addAttribute("header", mAppConfig.header());
+        model.addAttribute("intro", mAppConfig.intro());
         return "index";
     }
 

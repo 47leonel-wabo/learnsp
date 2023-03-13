@@ -3,3 +3,19 @@ spring:
   mustache:
     servlet:
       expose-request-attributes: true
+app:
+  config:
+    header: Greetings Learning Spring Boot 3.x fans!
+    intro: In this chapter, we are learning how to make spring boot apps
+    accounts[0]:
+      username: leon
+      password: leon-pass
+      authorities[0]: ROLE_USER
+    accounts[1]:
+      username: lena
+      password: lena-pass
+      authorities[0]: ROLE_USER
+    accounts[2]:
+      username: admin
+      password: admin-pass
+      autorities[0]: ROLE_ADMIN

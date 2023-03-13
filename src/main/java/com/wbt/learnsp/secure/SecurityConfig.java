@@ -4,11 +4,14 @@ import com.wbt.learnsp.user.UserAccount;
 import com.wbt.learnsp.user.UserAccountRepository;
 import com.wbt.learnsp.user.UserRepository;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.context.properties.ConfigurationPropertiesBinding;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.convert.converter.Converter;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.web.SecurityFilterChain;
@@ -46,6 +49,15 @@ public class SecurityConfig {
         httpSecurity.httpBasic();
 
         return httpSecurity.build();
+    }
+
+    interface GrantedAuthoritiesConvert extends Converter<String, GrantedAuthority> {
+    }
+
+    @Bean
+    @ConfigurationPropertiesBinding
+    GrantedAuthoritiesConvert converter() {
+        return SimpleGrantedAuthority::new;
     }
 
 }

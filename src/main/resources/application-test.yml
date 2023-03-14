@@ -1,0 +1,17 @@
+#spring.mustache.servlet.expose-request-attributes=true
+app:
+  config:
+    header: Greetings Test Team!
+    intro: If you run into issues while testing, let me know.
+    accounts[0]:
+      username: test1
+      password: test1-pass
+      authorities[0]: ROLE_USER
+    accounts[1]:
+      username: test2
+      password: test2-pass
+      authorities[0]: ROLE_USER
+    accounts[2]:
+      username: test3
+      password: test3-pass
+      autorities[0]: ROLE_ADMIN

@@ -1,0 +1,17 @@
+app:
+  config:
+    header: Greetings from YAML-Based settings!
+    intro: Check out these data from yaml setting file.
+    accounts:
+      - username: yaml1
+        password: pass1
+        authorities:
+          - ROLE_USER
+      - username: yaml2
+        password: pass2
+        authorities:
+          - ROLE_USER
+      - username: yaml3
+        password: pass3
+        authorities:
+          - ROLE_ADMIN

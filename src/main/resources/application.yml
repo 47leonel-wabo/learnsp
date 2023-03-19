@@ -19,3 +19,6 @@ app:
       username: admin
       password: admin-pass
       autorities[0]: ROLE_ADMIN
+
+server:
+  port: 9000
